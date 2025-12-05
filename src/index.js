@@ -4,6 +4,7 @@ import { chatRequestTextG4F } from "./api/g4fAPIConfig.js";
 import { chatRequestImageFusionBrain } from "./api/fusionBrainAPIConfig.js";
 import { chatRequestTextGroq } from "./api/groqCloudAPIConfig.js";
 import { chatRequestTextOpenRouter } from "./api/openRouterAPIConfig.js";
+import { chatRequestTextMistral } from "./api/mistralAPIConfig.js";
 import { messagesHandler } from "./handlers.js";
 import { database } from "./messagesDB.js";
 import fillerText from "./textMessages.js";
@@ -13,6 +14,7 @@ import { backOff } from "exponential-backoff";
 const providers = {
   groq: { text: chatRequestTextGroq },
   openRouter: { text: chatRequestTextOpenRouter },
+  mistral: { text: chatRequestTextMistral },
   openAI: { text: chatRequestTextOpenAI, image: chatRequestImageOpenAI },
   g4f: { text: chatRequestTextG4F },
   fusionBrain: { image: chatRequestImageFusionBrain },
